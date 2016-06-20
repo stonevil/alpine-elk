@@ -1,0 +1,31 @@
+cluster:
+  name: ${ELASTIC_NAME}
+
+node:
+  master: ${ELASTIC_NODE_MASTER}
+  data: ${ELASTIC_NODE_DATA}
+
+path:
+  data: /data/elastic/data
+  logs: /data/elastic/logs
+  plugins: ${ELASTIC_PATH}/plugins
+  work: /data/elastic/work
+
+bootstrap.mlockall: true
+network.host: 0.0.0.0
+# delete next line, after updating of k8s plugin for elasticsearch version >= 2.2
+security.manager.enabled: false
+
+http:
+  enabled: ${ELASTIC_HTTP_ENABLE}
+  compression: true
+  cors:
+    enabled: true
+
+cloud:
+  kubernetes:
+    service: ${ELASTIC_DISCOVERY_SERVICE}
+    namespace: ${ELASTIC_NAMESPACE}
+discovery:
+    type: kubernetes
+    zen.ping.multicast.enabled: false

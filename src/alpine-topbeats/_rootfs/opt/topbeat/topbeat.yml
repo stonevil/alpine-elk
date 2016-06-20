@@ -1,0 +1,78 @@
+input:
+  period: 10
+  procs: [".*"]
+
+  stats:
+    system: true
+    proc: true
+    filesystem: true
+
+output:
+  # elasticsearch:
+    # hosts: ["_ELASTICURL_"]
+    #protocol: "https"
+    #username: "admin"
+    #password: "s3cr3t"
+    #worker: 1
+    #index: "topbeat"
+    #path: "/elasticsearch"
+    #max_retries: 3
+    #bulk_max_size: 50
+    #timeout: 90
+    #flush_interval: 1
+    #save_topology: false
+    #topology_expire: 15
+    #tls:
+      #certificate_authorities: ["/etc/pki/root/ca.pem"]
+      #certificate: "/etc/pki/client/cert.pem"
+      #certificate_key: "/etc/pki/client/cert.key"
+      #insecure: true
+      #cipher_suites: []
+      #curve_types: []
+      #min_version: 1.0
+      #max_version: 1.2
+
+  logstash:
+    hosts: ["_LOGSTASHURL_"]
+    worker: 1
+    #loadbalance: true
+    #index: topbeat
+    #tls:
+      #certificate_authorities: ["/etc/pki/root/ca.pem"]
+      #certificate: "/etc/pki/client/cert.pem"
+      #certificate_key: "/etc/pki/client/cert.key"
+      #insecure: true
+      #cipher_suites: []
+      #curve_types: []
+
+  #file:
+    #path: "/tmp/topbeat"
+    #filename: topbeat
+    #rotate_every_kb: 10000
+    #number_of_files: 7
+
+  # console:
+    # Pretty print json event
+    #pretty: false
+
+shipper:
+  #name:
+  #tags: ["service-X", "web-tier"]
+  #ignore_outgoing: true
+  #refresh_topology_freq: 10
+  #topology_expire: 15
+  #geoip:
+    #paths:
+    #  - "/usr/share/GeoIP/GeoLiteCity.dat"
+    #  - "/usr/local/var/GeoIP/GeoLiteCity.dat"
+
+logging:
+  #to_syslog: true
+  #to_files: false
+  files:
+    #path: /var/log/mybeat
+    #name: mybeat
+    rotateeverybytes: 10485760 # = 10MB
+    #keepfiles: 7
+  #selectors: [ ]
+  #level: error

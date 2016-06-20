@@ -1,0 +1,39 @@
+server.port: 5601
+server.host: "0.0.0.0"
+
+server.basePath: "_KIBANASERVERBASEPATH_"
+
+elasticsearch.url: "_ELASTICURL_"
+
+elasticsearch.preserveHost: _ELASTICPRESERVEHOST_
+
+kibana.index: ".kibana"
+
+kibana.defaultAppId: "_KIBANADEFAULTAPPID_"
+
+# elasticsearch.username: "_ELASTICUSERNAME_"
+# elasticsearch.password: "_ELASTICPASSWORD_"
+
+# SSL for outgoing requests from the Kibana Server to the browser (PEM formatted)
+# server.ssl.cert: /path/to/your/server.crt
+# server.ssl.key: /path/to/your/server.key
+# Optional setting to validate that your Elasticsearch backend uses the same key files (PEM formatted)
+# elasticsearch.ssl.cert: /path/to/your/client.crt
+# elasticsearch.ssl.key: /path/to/your/client.key
+# If you need to provide a CA certificate for your Elasticsearch instance, put
+# the path of the pem file here.
+# elasticsearch.ssl.ca: /path/to/your/CA.pem
+# certificate.
+# elasticsearch.ssl.verify: true
+
+elasticsearch.pingTimeout: _ELASTICPINGTIMEOUT_
+elasticsearch.requestTimeout: _ELASTICREQUESTTIMEOUT_
+elasticsearch.shardTimeout: _ELASTICSHARDTIMEOUT_
+elasticsearch.startupTimeout: _ELASTICSTARTUPTIMEOUT_
+
+# pid.file: /var/run/kibana.pid
+
+logging.dest: stdout
+logging.silent: false
+logging.quiet: false
+logging.verbose: false
